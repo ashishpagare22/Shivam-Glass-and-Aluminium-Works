@@ -314,6 +314,7 @@ img {
 .service-card,
 .process-card,
 .gallery-card,
+.location-card,
 .testimonial-card,
 .contact-form-card,
 .contact-card,
@@ -515,6 +516,7 @@ img {
 
 .service-grid,
 .gallery-grid,
+.location-grid,
 .testimonial-grid {
   flex-wrap: wrap;
   gap: 18px;
@@ -522,6 +524,7 @@ img {
 
 .service-card,
 .gallery-card,
+.location-card,
 .testimonial-card {
   position: relative;
   flex: 1 1 280px;
@@ -622,6 +625,25 @@ img {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.location-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(241, 246, 250, 0.92)),
+    linear-gradient(135deg, rgba(11, 95, 168, 0.06), rgba(16, 24, 32, 0.02));
+}
+
+.location-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.location-note {
+  font-size: 0.94rem;
+}
+
 .coverage-card {
   padding: 26px 28px;
   background:
@@ -651,6 +673,53 @@ img {
   color: #e0a426;
   letter-spacing: 0.2em;
   font-size: 0.86rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  padding: 0;
+  border: 1px solid rgba(19, 33, 46, 0.08);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 34px rgba(15, 31, 46, 0.08);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  font-weight: 600;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--blue);
+}
+
+.faq-item[open] summary::after {
+  content: "-";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 24px 22px;
+  color: var(--text-soft);
+  line-height: 1.7;
 }
 
 .contact-grid {

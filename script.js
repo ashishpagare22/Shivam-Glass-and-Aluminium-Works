@@ -1,82 +1,97 @@
 const siteConfig = {
   businessName: "Shivam Glass & Aluminium Works",
-  phoneDisplay: "+91 00000 00000",
-  phoneDigits: "910000000000",
-  whatsappDigits: "910000000000",
-  mapLink: "https://maps.google.com/",
-  address:
-    "Punjabi Colony, Near Oza Petrol Pump, Shrirampur, Maharashtra - 413709",
+  phoneDisplay: "+91 97663 18416",
+  phoneDigits: "919766318416",
+  whatsappDigits: "919766318416",
+  email: "nikhilpagare4410@gmail.com",
+  shopAddress: "Yamuna Complex, Belapur Road, Shrirampur - 413709",
+  workshopAddress: "MIDC, Shrirampur - 413709",
+  shopMapLink: "https://maps.app.goo.gl/UL8N3FxMeTfZ7o876",
+  workshopMapLink: "https://maps.app.goo.gl/1dNLpPbeVTpUZUxY8",
+  defaultWhatsappMessage: "Hi, I want to enquire about glass/aluminium work.",
 };
 
 const services = [
   {
-    title: "Aluminium Sliding Windows",
-    meta: "Top homepage priority",
+    title: "Aluminium Windows & Doors",
+    meta: "Core service",
     description:
-      "Custom-size sliding windows with clean frame work, practical ventilation, and durable aluminium fitting for homes and small projects.",
+      "Strong, practical, and custom-fitted aluminium windows and doors for homes, offices, and interior projects.",
   },
   {
-    title: "Kitchen Trolley & Modular Work",
-    meta: "Best-selling service",
+    title: "Sliding Windows",
+    meta: "Top request",
     description:
-      "Functional kitchen trolley layouts that improve storage, movement, and usability without wasting space.",
+      "Smooth sliding systems with custom sizing, clean fitting, and durable aluminium frame options.",
   },
   {
-    title: "Glass Railings & Partitions",
+    title: "Kitchen Trolleys",
+    meta: "Popular choice",
+    description:
+      "Functional kitchen trolley work designed around storage, movement, and daily usability.",
+  },
+  {
+    title: "Glass Work & Fittings",
+    meta: "Custom glass",
+    description:
+      "Glass solutions with practical fittings for homes and interior spaces where finish and safety both matter.",
+  },
+  {
+    title: "Glass Railings",
     meta: "Modern finish",
     description:
-      "Toughened glass railings and partitions for homes, offices, staircases, and interiors that need a neat, open look.",
+      "Stylish railing work for balconies, staircases, and terraces with dependable fitting support.",
   },
   {
-    title: "Glass Doors & Interior Glass Work",
-    meta: "Custom design",
+    title: "Office Partitions",
+    meta: "Interior planning",
     description:
-      "Door solutions and interior glass installations designed around your space, finishing style, and daily use.",
+      "Glass and aluminium partition work for offices, shops, and spaces that need clean separation.",
   },
   {
-    title: "Fabrication Services",
-    meta: "Made to requirement",
+    title: "Fabrication Work",
+    meta: "Workshop handled",
     description:
-      "Custom fabrication work for home improvements, utility structures, and interior support elements with local service support.",
+      "Fabrication support from the MIDC workshop for custom aluminium and related project needs.",
   },
   {
-    title: "Repair & Replacement Work",
+    title: "Repair & Replacement",
     meta: "Service support",
     description:
-      "Replacement of damaged glass, worn fittings, alignment issues, and other repair jobs where timely local response matters.",
+      "Repair and replacement support for suitable glass, fittings, and aluminium work where local response matters.",
   },
 ];
 
 const galleryItems = [
   {
-    title: "Sliding Window Installation",
-    label: "Home exterior",
-    description: "Replace with a real project image of your aluminium window work.",
+    title: "Sliding Window Work",
+    label: "Residential fitting",
+    description: "Replace this tile later with one of your best real sliding window project photos.",
   },
   {
-    title: "Kitchen Trolley Setup",
-    label: "Modular storage",
-    description: "Use one of your strongest finished kitchen photos here.",
+    title: "Kitchen Trolley Project",
+    label: "Modular setup",
+    description: "Use a strong finished kitchen photo here when you are ready to add images.",
   },
   {
-    title: "Glass Railing Project",
-    label: "Stair / balcony",
-    description: "Good place for a premium-looking railing installation shot.",
+    title: "Glass Railing Installation",
+    label: "Stair or balcony",
+    description: "Good place for a premium-looking railing image from your completed work.",
   },
   {
-    title: "Partition & Door Work",
+    title: "Office Partition Work",
     label: "Interior division",
-    description: "Show office, shop, or home partition work in this tile.",
+    description: "This card can later hold a glass or aluminium office partition project image.",
   },
   {
-    title: "Fabrication Detail",
-    label: "Custom fitting",
-    description: "Use a close-up with strong finishing and hardware visibility.",
+    title: "Aluminium Door & Window Fitting",
+    label: "Custom size",
+    description: "Useful for showing door and window work together in one clean project shot.",
   },
   {
-    title: "Repair / Replacement",
-    label: "Before and after",
-    description: "Later you can replace this with a repair transformation example.",
+    title: "Repair / Replacement Example",
+    label: "Service support",
+    description: "Later you can replace this with a before-and-after repair or replacement photo.",
   },
 ];
 
@@ -89,15 +104,15 @@ const testimonials = [
   },
   {
     name: "Kitchen project customer",
-    title: "Belapur",
+    title: "Rahuri",
     quote:
-      "Our trolley work was customized exactly to the kitchen size, and the result felt practical for daily use.",
+      "Our trolley work was customized to the kitchen size, and the result felt practical for daily use.",
   },
   {
-    name: "Builder reference",
-    title: "Nearby project",
+    name: "Project reference",
+    title: "Nearby area",
     quote:
-      "Reliable local support for glass partitions and fittings. Easy communication and good response during work execution.",
+      "Reliable local support for glass partitions and fittings. Communication was simple and the service felt dependable.",
   },
 ];
 
@@ -138,7 +153,7 @@ const renderCards = () => {
     .map(
       (testimonial) => `
         <article class="testimonial-card reveal">
-          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-stars">Rated 5/5</div>
           <p>"${testimonial.quote}"</p>
           <h3>${testimonial.name}</h3>
           <span class="service-meta">${testimonial.title}</span>
@@ -149,22 +164,36 @@ const renderCards = () => {
 };
 
 const applyContactLinks = () => {
+  const defaultMessage = encodeURIComponent(siteConfig.defaultWhatsappMessage);
+
   document.querySelectorAll("[data-call-link]").forEach((link) => {
     link.href = `tel:${siteConfig.phoneDigits}`;
   });
 
   document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
-    link.href = `https://wa.me/${siteConfig.whatsappDigits}`;
+    link.href = `https://wa.me/${siteConfig.whatsappDigits}?text=${defaultMessage}`;
     link.target = "_blank";
     link.rel = "noreferrer";
   });
 
-  document.querySelectorAll("[data-map-link]").forEach((link) => {
-    link.href = siteConfig.mapLink;
+  document.querySelectorAll("[data-shop-map-link]").forEach((link) => {
+    link.href = siteConfig.shopMapLink;
+  });
+
+  document.querySelectorAll("[data-workshop-map-link]").forEach((link) => {
+    link.href = siteConfig.workshopMapLink;
+  });
+
+  document.querySelectorAll("[data-email-link]").forEach((link) => {
+    link.href = `mailto:${siteConfig.email}`;
   });
 
   document.querySelectorAll("[data-phone-display]").forEach((node) => {
     node.textContent = siteConfig.phoneDisplay;
+  });
+
+  document.querySelectorAll("[data-email-display]").forEach((node) => {
+    node.textContent = siteConfig.email;
   });
 };
 
@@ -206,7 +235,7 @@ const setupInquiryForm = () => {
 
     const formData = new FormData(inquiryForm);
     const message = [
-      `Hello ${siteConfig.businessName},`,
+      siteConfig.defaultWhatsappMessage,
       "",
       `Name: ${formData.get("name")}`,
       `Phone: ${formData.get("phone")}`,
